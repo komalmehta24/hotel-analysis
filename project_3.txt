@@ -1,0 +1,155 @@
+Project Summary -
+In this project's description there are two Hotels which are CITY HOTEL & RESORT HOTEL. According to the dataset there are 119390 rows & 32 columns. In this project i have done 3 types of Data manipulation - Data collections , Data cleaning and the last one is EDA(Exploratory Data Analysis).
+
+In Data collection: I have found various columns with help of coding which are head(),tail(),describe(),info(),row(),column(). Some of the methods used & some column to be updated and changed here. Some columns has deleted due to duplicate column present in the list & many more things happened, you can easily go through my project.
+
+In Data cleaning: I have deleted some rows due to various duplicates value in the Dataset i.e there were 119390 rows after using drop_duplicates method as we find duplicates items equal to 87396.
+
+Before visualizing any data from the Dataset we have done data Wrangling here. With the help of this we checked the null value of all the columns. After getting most null value in the columns, i dropped that columns by using "drop method".When we find minimal number of null values, filling those null values with necessary value as per as requirement by using .fillna()
+
+Data visualization: According to the data visualization we found the relationship between the variables. Here we describe all the columns with different pie chart plot. we plot the histogram , plot the chart for canceled & not canceled hotel, one chart for showing week wise stay at the hotel, one use for month wise bookings, i show the market segment through the chart visual. With the help of bar plot i show the revenue of hotel.
+
+This is the best ways to explain between two variables.
+
+This is the summary of my project, i wish you like it most.
+
+
+
+Problem Statement
+Have you ever wondered when the best time of year to book a hotel room is? 
+Or the optimal length of stay in order to get the best daily rate? 
+What if you wanted to predict whether or not a hotel was likely to receive a disproportionately high number of special requests? 
+
+
+This hotel booking dataset can help you explore those questions! This data set contains booking information for a city hotel and a resort hotel, and includes information such as when the booking was made, length of stay, the number of adults, children, and/or babies, and the number of available parking spaces, among other things. All personally identifying information has been removed from the data. Explore and analyse the data to discover important factors that govern the bookings.
+
+Business Objective
+ - Analyze hotel booking trends
+ - Understand cancellation behavior
+ - Identify key factors affecting revenue
+ - Explore customer demographics and booking patterns
+ - Perform data cleaning and feature engineering
+ - Reasons for booking cancellations
+ - Best time to book hotel
+ - Peak season
+ - suggestions to reduce cancellations
+ - increase revenue of hotels.
+
+
+General Guidelines : -
+Well-structured, formatted, and commented code is required.
+
+Exception Handling, Production Grade Code & Deployment Ready Code will be a plus. Those students will be awarded some additional credits.
+
+The additional credits will have advantages over other students during Star Student selection.
+
+Each and every logic should have proper comments.
+
+You may add as many number of charts you want. Make Sure for each and every chart the following format should be answered.
+
+
+
+Variables Description
+1.hotel = Name of the hotel (Resort or hotel)
+
+2.is_canceled = if the booking was canceled (0 or 1 )
+
+3.lead_time = Number of days before the actual arrival of guests
+
+4.arrival_date_year = year of arrival date
+
+5.arrival_date_month = Month of arrival date
+
+6.arrival_date_day_of_month = day of arrival date
+
+7.arrival_date_week_number = Week number of year for arrival date
+
+8.stays_in_weekend_nights = Number of weekend nights (Saturday or Sunday) spent at the hotel by the guest
+
+9.stays_in_week_nights = Number of weeknights(Monday to Friday) spent on the hotel by the guest
+
+10.adults = Number of adults among guest
+
+11.children = Number of children among guest
+
+12.babies = Number of babies among guest
+
+13.meal = Type of meal these guest booked
+
+14.country = The country where the guest belong to
+
+15.market_segment =Designation of market segment
+
+16.distribution_channel = Nam of booking distribution channel
+
+17.is_repeated_guest = If the booking was from a repeted guest (1) or (0)
+
+18.previous_cancellations = Number of previous booking that were cancelled by the customer prior of the current booking
+
+19.previous_bookings_not_canceled = Number of privious booking not cancelled by the customer prior or to the current booking
+
+20.reserved_room_type = Code of room type reserved
+
+21.assigned_room_type = Code of room type assigned
+
+22.booking_changes = Number of changes made to the booking
+
+23.deposit_type = Type of deposit made by the guest
+
+24.agent = ID of travel agent who made the booking
+
+25.company = ID of the company that made the booking
+
+26.days_in_waiting_list = Number of the days the booking was on waiting list
+
+27.customer_type = Type of customer assuming one or four categories
+
+28.adr = Average Daily Rate , as defined by driving the sum of lodging transaction by the total number of staying nights
+
+29.required_car_parking_spaces = Number of car parking spaces required by the customer
+
+30.total_of_special_requests = Number of special requests made by the customer
+
+31.reservation_status = Reservation status (Cancelled ,Check-Out or No-Show)
+
+32.reservation_status_date = Date at which the last reservation status was uploaded
+
+
+
+What all manipulations have you done and insights you found?¶
+
+
+1)Dropping duplicates : There were total number of duplicate values was 31994 . So first we have dropped these duplicates to clean the data. Now number of rows are after removing duplicates are 87396.
+
+2)Handling Null Values: 'children', 'country', 'agent', and 'company'. These are the column with null values and droping the company coloumn as it has highest null values
+
+Then replacing null values in agent column with 0 assuming those rooms were booked without company/agent
+
+Then I have filled null values in children column with 0 as there are only 4 missing values ,assuming that family had 0 children.
+
+Replacing null values in the country column with 'others'to avoid confusion.
+
+3) There are some rows with total number of adults, children or babies equal to zero , this means there is no any booking were made . So we have removed 166 rows having with 0 in adult ,babies and children coloumn
+
+4)Childern & agent column datatype was float but it contains only int value,so change datatype as int64.
+
+5)for our understanding, in column 'is_canceled' we will replace the value from (0,1) to not_canceled, is canceled and same done for 'is_repeated_guest' column
+
+6)There are few columns required in Data to analysis purpose which is created from the given columns.
+
+Total Guests: This columns will help us to evaluate the volumes of total guest and revenue as well. We get this value by adding total no. of Adults, Children & babies.
+
+Revenue : We find revenue by multiplying adr & total guest. This column will use to analyse the profit and growth of each hotel.
+
+Tools & Technologies Used Libraries:
+pandas → Data manipulation
+numpy → Numerical operations
+matplotlib → Visualization
+seaborn → Statistical visualization
+
+Feature Engineering
+ - Total Guests
+ - Total Nights
+ - Revenue
+
+
